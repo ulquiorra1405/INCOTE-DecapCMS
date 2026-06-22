@@ -7,7 +7,7 @@ descripcion_corta: "Uso de Photoshop e Illustrator, diseño visual para redes. D
 horario: "Sábados, 9:00 a.m. – 12:00 p.m."
 duracion: "3 meses (50 horas)"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/diseno-grafico.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$3,500"

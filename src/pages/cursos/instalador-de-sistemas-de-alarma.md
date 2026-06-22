@@ -7,7 +7,7 @@ descripcion_corta: "Instalación de sistemas de alarma para hogares y negocios. 
 horario: "Sábados, 9:00 a.m. – 1:00 p.m."
 duracion: "4 meses (70 horas)"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/alarmas.webp"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$2,500"

@@ -7,7 +7,7 @@ descripcion_corta: "Limpieza facial, tratamientos estéticos avanzados. Aprende 
 horario: "Domingos, 8:00 a.m. – 12:00 p.m."
 duracion: "3 meses (50 horas)"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/cosmiatria.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$6,500"

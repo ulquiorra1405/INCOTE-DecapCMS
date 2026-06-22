@@ -7,7 +7,7 @@ descripcion_corta: "Diseños en gel, pintura avanzada y decoración. Lleva tus h
 horario: "Sábados, 9:00 a.m. – 12:00 p.m."
 duracion: "18 horas"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/unas-acrilicas-avanzado.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$1,500"

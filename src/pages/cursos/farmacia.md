@@ -7,7 +7,7 @@ descripcion_corta: "Atención al cliente, medicamentos y gestión de farmacias. 
 horario: "Domingos, 9:00 a.m. – 12:00 p.m."
 duracion: "3 meses"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/farmacia.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$2,000"

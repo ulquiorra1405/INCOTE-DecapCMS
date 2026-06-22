@@ -7,7 +7,7 @@ descripcion_corta: "Instalación y mantenimiento de motores de verjas. Un oficio
 horario: "Sábados, 2:00 p.m. – 6:00 p.m."
 duracion: "30 horas"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/motor-verjas.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: ""

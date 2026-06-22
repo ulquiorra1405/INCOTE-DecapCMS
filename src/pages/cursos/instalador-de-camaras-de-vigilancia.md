@@ -7,7 +7,7 @@ descripcion_corta: "Instalación y configuración de sistemas de videovigilancia
 horario: "Domingos, 9:00 a.m. – 1:00 p.m."
 duracion: "3 meses"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/camaras-vigilancia.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$2,500"

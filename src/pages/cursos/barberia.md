@@ -7,7 +7,7 @@ descripcion_corta: "Técnicas de corte y afeitado modernas. Conviértete en un b
 horario: "Sábados, 9:00 a.m. – 12:00 p.m."
 duracion: "3 meses"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/barberia.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$1,600"

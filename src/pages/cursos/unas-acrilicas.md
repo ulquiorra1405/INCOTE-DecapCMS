@@ -7,7 +7,7 @@ descripcion_corta: "Técnicas básicas y diseños avanzados de uñas. Inicia en 
 horario: "Sábados, 9:00 a.m. – 12:00 p.m."
 duracion: "3 meses"
 modalidad: "Presencial"
-imagen: "/assets/images/placeholder-screenshot.png"
+imagen: "/assets/images/cursos/unas-acrilicas.jpg"
 instructor: ""
 estudiantes: ""
 precio_inscripcion: "RD$1,600"
