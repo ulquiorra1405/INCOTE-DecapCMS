@@ -13,15 +13,18 @@ const { seo } = Astro.props;
 <html lang="es">
 	<head>
 		<BaseHead {...seo} />
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 		<script>
-			// Si hay un token de invitación en la URL, redirigir a /admin/ con el hash
-			if (window.location.hash && window.location.hash.includes('invite_token')) {
-				window.location.replace('/admin/' + window.location.hash);
-			}
+			// DETECTAR INVITACIÓN INMEDIATAMENTE: si hay invite_token en la URL,
+			// redirigir a /admin/ CONSERVANDO el hash para que el widget lo procese
+			(function() {
+				var hash = window.location.hash;
+				if (hash && hash.indexOf('invite_token') !== -1) {
+					window.location.href = '/admin/' + hash;
+				}
+			})();
 		</script>
 	</head>
-	<body>
+	<body id="body">
 		<SkipLink />
     <slot name="announcement-bar" />
 		<slot name="header" />
