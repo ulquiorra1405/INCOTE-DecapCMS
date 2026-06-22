@@ -24,29 +24,42 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-  <div class="curso-header">
+  <div class="curso-hero">
     <Container>
-      <div class="curso-header__grid">
-        <div class="curso-header__info">
+      <div class="curso-hero__grid">
+        <div class="curso-hero__info">
+          <a href="/cursos" class="curso-back">&#8592; Todos los cursos</a>
           <span class="curso-badge">{categoria}</span>
           <h1>{titulo}</h1>
           <p class="curso-descripcion">{descripcion_corta}</p>
           <div class="curso-meta">
             {horario && <div class="curso-meta__item">
-              <span class="curso-meta__label">Horario</span>
-              <span class="curso-meta__value">{horario}</span>
+              <span class="curso-meta__icon">&#128197;</span>
+              <div>
+                <span class="curso-meta__label">Horario</span>
+                <span class="curso-meta__value">{horario}</span>
+              </div>
             </div>}
             {duracion && <div class="curso-meta__item">
-              <span class="curso-meta__label">Duración</span>
-              <span class="curso-meta__value">{duracion}</span>
+              <span class="curso-meta__icon">&#9200;</span>
+              <div>
+                <span class="curso-meta__label">Duración</span>
+                <span class="curso-meta__value">{duracion}</span>
+              </div>
             </div>}
             {modalidad && <div class="curso-meta__item">
-              <span class="curso-meta__label">Modalidad</span>
-              <span class="curso-meta__value">{modalidad}</span>
+              <span class="curso-meta__icon">&#127760;</span>
+              <div>
+                <span class="curso-meta__label">Modalidad</span>
+                <span class="curso-meta__value">{modalidad}</span>
+              </div>
             </div>}
             {instructor && <div class="curso-meta__item">
-              <span class="curso-meta__label">Instructor</span>
-              <span class="curso-meta__value">{instructor}</span>
+              <span class="curso-meta__icon">&#128218;</span>
+              <div>
+                <span class="curso-meta__label">Instructor</span>
+                <span class="curso-meta__value">{instructor}</span>
+              </div>
             </div>}
           </div>
           {(precio_inscripcion || precio_mensualidad) && <div class="curso-precios">
@@ -60,7 +73,8 @@ const seo = {
             </div>}
           </div>}
         </div>
-        {imagen && <div class="curso-header__img">
+        {imagen && <div class="curso-hero__img">
+          <div class="curso-img-decoration"></div>
           <img src={imagen} alt={titulo} />
         </div>}
       </div>
@@ -72,102 +86,200 @@ const seo = {
       <slot />
     </article>
   </Container>
+
+  <Container>
+    <div class="curso-cta">
+      <h3>¿Interesado en este curso?</h3>
+      <p>Contáctanos para más información sobre horarios, inscripciones y grupos disponibles.</p>
+      <a href="/contacto" class="cta-btn">Solicitar información &#8594;</a>
+    </div>
+  </Container>
 </Layout>
 
 <style>
-  .curso-header {
-    padding: var(--section-margin) 0;
+  .curso-hero {
+    padding: 3rem 0;
     background: var(--theme-surface-1);
+    border-radius: 0 0 var(--theme-shape-radius) var(--theme-shape-radius);
   }
-  .curso-header__grid {
+  .curso-hero__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: start;
+  }
+  .curso-back {
+    display: inline-block;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: opacity var(--theme-transition);
+  }
+  .curso-back:hover {
+    opacity: 1;
+    color: var(--theme-primary);
   }
   .curso-badge {
     display: inline-block;
-    background: var(--theme-primary);
+    background: var(--theme-gradient-primary);
     color: var(--theme-on-primary);
     padding: 0.3rem 0.8rem;
     border-radius: 0.25rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 1rem;
   }
-  .curso-header__info h1 {
+  .curso-hero__info h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
   .curso-descripcion {
-    font-size: 1.1rem;
-    opacity: 0.8;
+    font-size: 1.05rem;
+    opacity: 0.75;
     margin-bottom: 2rem;
-    line-height: 1.6;
+    line-height: 1.7;
   }
   .curso-meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-bottom: 2rem;
   }
   .curso-meta__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     padding: 0.75rem;
     background: var(--theme-bg);
     border-radius: 0.5rem;
-    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: var(--theme-shadow-sm);
+  }
+  .curso-meta__icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
   }
   .curso-meta__label {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    opacity: 0.6;
-    margin-bottom: 0.25rem;
+    opacity: 0.55;
+    margin-bottom: 0.1rem;
   }
   .curso-meta__value {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .curso-precios {
     display: flex;
     gap: 1rem;
   }
   .precio-item {
-    padding: 0.75rem 1.25rem;
-    background: var(--theme-accent);
+    padding: 0.75rem 1.5rem;
+    background: var(--theme-gradient-accent);
     color: var(--theme-on-accent);
     border-radius: 0.5rem;
     text-align: center;
-    min-width: 120px;
+    min-width: 140px;
+    box-shadow: var(--theme-shadow-sm);
   }
   .precio-label {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    opacity: 0.7;
+    opacity: 0.65;
   }
   .precio-valor {
     display: block;
     font-weight: 700;
-    font-size: 1.15rem;
-    margin-top: 0.25rem;
+    font-size: 1.2rem;
+    margin-top: 0.15rem;
   }
-  .curso-header__img img {
+  .curso-hero__img {
+    position: relative;
+  }
+  .curso-img-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--theme-accent);
+    border-radius: var(--theme-shape-radius);
+    transform: translate(10px, 10px);
+    opacity: 0.3;
+  }
+  .curso-hero__img img {
+    position: relative;
     width: 100%;
     border-radius: var(--theme-shape-radius);
     object-fit: cover;
-    max-height: 400px;
+    max-height: 380px;
+    box-shadow: var(--theme-shadow-lg);
   }
+
   .curso-content {
-    padding: 2rem 0;
+    padding: 3rem 0;
     max-width: 800px;
-    line-height: 1.8;
+    line-height: 1.9;
   }
+  .curso-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .curso-content p {
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .curso-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .curso-content li {
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+  }
+  .curso-content strong {
+    font-weight: 600;
+  }
+
+  .curso-cta {
+    margin: 0 auto var(--section-margin);
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--theme-gradient-primary);
+    border-radius: var(--theme-shape-radius);
+    color: #fff;
+  }
+  .curso-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+  .curso-cta p {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--theme-gradient-accent);
+    color: var(--theme-on-accent);
+    border-radius: var(--theme-button-border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--theme-transition), box-shadow var(--theme-transition);
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--theme-shadow-glow);
+    color: var(--theme-on-accent);
+  }
+
   @media (max-width: 768px) {
-    .curso-header__grid {
+    .curso-hero__grid {
       grid-template-columns: 1fr;
     }
     .curso-meta {

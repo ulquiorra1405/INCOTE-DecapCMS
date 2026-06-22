@@ -13,6 +13,7 @@ const seo = {
 <Layout {seo}>
 	<Container>
 		<section class="cursos-header">
+			<div class="section-label">Nuestra oferta académica</div>
 			<h1>Cursos y Capacitaciones</h1>
 			<p>Forma parte de INCOTE hoy mismo, contamos con cursos en muchas áreas y en distintos horarios para que puedas formarte a tu ritmo y en base a tu necesidad.</p>
 		</section>
@@ -22,25 +23,34 @@ const seo = {
 				cursos
 					.sort((a, b) => (a.frontmatter.titulo || '').localeCompare(b.frontmatter.titulo || ''))
 					.map(curso => {
-						const { titulo, categoria, descripcion_corta, horario, duracion, modalidad, imagen, instructor, estudiantes } = curso.frontmatter;
+						const { titulo, categoria, descripcion_corta, horario, duracion, modalidad, imagen } = curso.frontmatter;
 						const slug = curso.url?.replace('/cursos/', '').replace('/', '') || '';
 						return (
 							<a href={`/cursos/${slug}`} class="curso-card-link">
 								<article class="curso-card">
-									{imagen && <div class="curso-card__img">
-										<img src={imagen} alt={titulo} />
-									</div>}
-									<div class="curso-card__body">
+									<div class="curso-card__img-wrapper">
+										{imagen && <img src={imagen} alt={titulo} />}
+										<div class="curso-card__img-overlay"></div>
 										<span class="curso-card__categoria">{categoria}</span>
+									</div>
+									<div class="curso-card__body">
 										<h2>{titulo}</h2>
 										<p class="curso-card__desc">{descripcion_corta}</p>
 										<div class="curso-card__info">
-											{horario && <span>&#128197; {horario}</span>}
-											{duracion && <span>&#9200; {duracion}</span>}
-											{modalidad && <span>&#127760; {modalidad}</span>}
-											{estudiantes && <span>&#128101; {estudiantes}</span>}
+											{horario && <div class="curso-card__info-item">
+												<span class="info-icon">&#128197;</span>
+												<span>{horario}</span>
+											</div>}
+											{duracion && <div class="curso-card__info-item">
+												<span class="info-icon">&#9200;</span>
+												<span>{duracion}</span>
+											</div>}
+											{modalidad && <div class="curso-card__info-item">
+												<span class="info-icon">&#127760;</span>
+												<span>{modalidad}</span>
+											</div>}
 										</div>
-										<Button unelevated>Ver más</Button>
+										<span class="curso-card__action">Ver detalles &#8594;</span>
 									</div>
 								</article>
 							</a>
@@ -52,10 +62,21 @@ const seo = {
 </Layout>
 
 <style>
+	/* Label */
+	.section-label {
+		display: inline-block;
+		color: var(--theme-accent);
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.5rem;
+	}
+
 	.cursos-header {
-		margin: var(--section-margin) auto;
+		margin: var(--section-margin) auto 3rem;
 		text-align: center;
-		max-width: 700px;
+		max-width: 650px;
 	}
 	.cursos-header h1 {
 		margin-bottom: 1rem;
@@ -63,14 +84,14 @@ const seo = {
 	.cursos-header p {
 		opacity: 0.7;
 		font-size: 1.05rem;
-		line-height: 1.6;
+		line-height: 1.7;
 	}
 
 	.cursos-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1.5rem;
-		margin: var(--section-margin) auto;
+		margin: 0 auto var(--section-margin);
 	}
 	.curso-card-link {
 		text-decoration: none;
@@ -79,24 +100,49 @@ const seo = {
 	.curso-card {
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
-		background: var(--theme-surface-1);
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		background: var(--theme-bg);
+		box-shadow: var(--theme-shadow-sm);
+		transition: all var(--theme-transition-slow);
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+		border: 1px solid rgba(0,0,0,0.04);
 	}
 	.curso-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+		transform: translateY(-6px);
+		box-shadow: var(--theme-shadow-lg);
 	}
-	.curso-card__img {
-		height: 200px;
+	.curso-card__img-wrapper {
+		height: 220px;
 		overflow: hidden;
+		position: relative;
 	}
-	.curso-card__img img {
+	.curso-card__img-wrapper img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		transition: transform var(--theme-transition-slow);
+	}
+	.curso-card:hover .curso-card__img-wrapper img {
+		transform: scale(1.05);
+	}
+	.curso-card__img-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(transparent 50%, rgba(0,0,0,0.3));
+	}
+	.curso-card__categoria {
+		position: absolute;
+		bottom: 0.75rem;
+		left: 0.75rem;
+		background: var(--theme-gradient-primary);
+		color: #fff;
+		padding: 0.3rem 0.8rem;
+		border-radius: 0.25rem;
+		font-size: 0.7rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 	.curso-card__body {
 		padding: 1.5rem;
@@ -104,46 +150,48 @@ const seo = {
 		display: flex;
 		flex-direction: column;
 	}
-	.curso-card__categoria {
-		display: inline-block;
-		background: var(--theme-primary);
-		color: var(--theme-on-primary);
-		padding: 0.2rem 0.6rem;
-		border-radius: 0.25rem;
-		font-size: 0.75rem;
-		font-weight: 600;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
-		width: fit-content;
-	}
 	.curso-card__body h2 {
 		font-size: 1.15rem;
 		margin-bottom: 0.5rem;
 	}
 	.curso-card__desc {
 		font-size: 0.9rem;
-		opacity: 0.7;
+		opacity: 0.65;
 		margin-bottom: 1rem;
-		line-height: 1.5;
+		line-height: 1.6;
 		flex: 1;
 	}
 	.curso-card__info {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		flex-direction: column;
 		gap: 0.35rem;
-		font-size: 0.8rem;
-		opacity: 0.65;
 		margin-bottom: 1rem;
 	}
-	.curso-card__info span {
-		padding: 0.2rem 0;
+	.curso-card__info-item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.85rem;
+		opacity: 0.6;
+	}
+	.info-icon {
+		font-size: 0.85rem;
+	}
+	.curso-card__action {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--theme-primary);
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		transition: gap var(--theme-transition);
+	}
+	.curso-card:hover .curso-card__action {
+		gap: 0.5rem;
 	}
 
 	@media (max-width: 768px) {
 		.cursos-grid {
-			grid-template-columns: 1fr;
-		}
-		.curso-card__info {
 			grid-template-columns: 1fr;
 		}
 	}

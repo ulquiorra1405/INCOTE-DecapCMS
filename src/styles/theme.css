@@ -5,7 +5,7 @@
 	--theme-on-primary: #fff;
 
 	--theme-accent: #F5C518;
-	--theme-accent-hover: #D4A800;
+	--theme-accent-hover: #FFD640;
 	--theme-on-accent: #1E3A5F;
 
 	--theme-bg: #ffffff;
@@ -17,20 +17,33 @@
 	--theme-surface-2: #E8F0FE;
 	--theme-on-surface-2: #1E3A5F;
 
+	/* Gradients */
+	--theme-gradient-primary: linear-gradient(135deg, #1E3A5F 0%, #2A4F7F 50%, #3A6A9F 100%);
+	--theme-gradient-accent: linear-gradient(135deg, #F5C518 0%, #FFD640 50%, #FFE680 100%);
+	--theme-gradient-hero: linear-gradient(135deg, #0F1A2E 0%, #1E3A5F 40%, #2A4F7F 100%);
+	--theme-gradient-surface: linear-gradient(135deg, #F0F2F5 0%, #E8F0FE 100%);
+
+	/* Shadows */
+	--theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+	--theme-shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+	--theme-shadow-lg: 0 8px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+	--theme-shadow-xl: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
+	--theme-shadow-glow: 0 0 20px rgba(245, 197, 24, 0.15);
+
 	/* Theme Shapes */
-	/* Set this to 0 if you want all of the rounded cards, images, etc to be straight edges */
-	--theme-shape-radius: clamp(0.75rem, 1.5rem, 2.5rem);
+	--theme-shape-radius: clamp(0.75rem, 1.25rem, 2rem);
 	--theme-button-border-radius: 0.5rem;
 
 	/* Theme Transition */
 	--theme-transition: 0.2s ease-in-out;
+	--theme-transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
 	/* Theme Layout */
-	--section-margin: 3rem;
-	--theme-grid-gap: 1rem;
+	--section-margin: 5rem;
+	--theme-grid-gap: 1.5rem;
 	--container-max-width: 1440px;
 	--container-max-width-narrow: 960px;
-	--container-padding: 0 1rem;
+	--container-padding: 0 1.5rem;
 
 	--theme-blog-post-header-width: 1200px;
 
@@ -41,15 +54,19 @@
 		sans-serif;
 }
 
+::selection {
+	background: var(--theme-accent);
+	color: var(--theme-on-accent);
+}
+
 [data-theme='default'] {
 	color-scheme: light;
-	/* Theme Colors — INCOTE Brand */
 	--theme-primary: #1E3A5F;
 	--theme-primary-hover: #2A4F7F;
 	--theme-on-primary: #fff;
 
 	--theme-accent: #F5C518;
-	--theme-accent-hover: #D4A800;
+	--theme-accent-hover: #FFD640;
 	--theme-on-accent: #1E3A5F;
 
 	--theme-bg: #ffffff;
@@ -61,26 +78,28 @@
 	--theme-surface-2: #E8F0FE;
 	--theme-on-surface-2: #1E3A5F;
 
-	/* Theme Shape */
-	--theme-shape-radius: clamp(0.75rem, 1.5rem, 2.5rem);
+	--theme-gradient-primary: linear-gradient(135deg, #1E3A5F 0%, #2A4F7F 50%, #3A6A9F 100%);
+	--theme-gradient-hero: linear-gradient(135deg, #0F1A2E 0%, #1E3A5F 40%, #2A4F7F 100%);
+
+	--theme-shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+	--theme-shadow-lg: 0 8px 30px rgba(0,0,0,0.10);
+	--theme-shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+	--theme-shape-radius: clamp(0.75rem, 1.25rem, 2rem);
 	--theme-button-border-radius: 0.5rem;
 
-	/* Theme Transition */
 	--theme-transition: 0.2s ease-in-out;
+	--theme-transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
-	/* Theme Layout */
-	--section-margin: 3rem;
-	--theme-grid-gap: 1rem;
+	--section-margin: 5rem;
+	--theme-grid-gap: 1.5rem;
 	--container-max-width: 1440px;
 	--container-max-width-narrow: 960px;
-	--container-padding: 0 1rem;
-
+	--container-padding: 0 1.5rem;
 	--theme-blog-post-header-width: 1200px;
 }
 
 [data-theme='dark'] {
 	color-scheme: dark;
-	/* Theme Colors — INCOTE Dark */
 	--theme-primary: #F5C518;
 	--theme-primary-hover: #FFD640;
 	--theme-on-primary: #1E3A5F;
@@ -89,70 +108,24 @@
 	--theme-accent-hover: #FFD640;
 	--theme-on-accent: #1E3A5F;
 
-	--theme-bg: #0F1A2E;
+	--theme-bg: #0A1128;
 	--theme-on-bg: #E8ECF1;
 
-	--theme-surface-1: #1A2A45;
+	--theme-surface-1: #121F3D;
 	--theme-on-surface-1: #E8ECF1;
 
-	--theme-surface-2: #2A4F7F;
+	--theme-surface-2: #1A2A45;
 	--theme-on-surface-2: #ffffff;
 
-	--theme-shape-radius: clamp(0.75rem, 1.5rem, 2.5rem);
+	--theme-gradient-hero: linear-gradient(135deg, #060C1A 0%, #0A1128 40%, #121F3D 100%);
+	--theme-shadow-lg: 0 8px 30px rgba(0,0,0,0.3);
+	--theme-shadow-xl: 0 20px 60px rgba(0,0,0,0.4);
 
+	--theme-shape-radius: clamp(0.75rem, 1.25rem, 2rem);
 	--form-field-input-color: var(--theme-on-bg);
 }
 
-[data-theme='earth'] {
-	/* Theme Colors */
-	--theme-primary: #2c3e2d;
-	--theme-primary-hover: #395a3b;
-	--theme-on-primary: hsl(0, 0%, 100%);
-
-	--theme-bg: #eeeff1;
-	--theme-on-bg: #272f27;
-
-	--theme-surface-1: #e6e4e0;
-	--theme-on-surface-1: #272f27;
-
-	--theme-surface-2: #c3d9c4;
-	--theme-on-surface-2: #000;
-
-	--theme-button-border-radius: 0.5rem;
-}
-
-[data-theme='ocean'] {
-	/* Theme Colors */
-	/* Theme Colors */
-	--theme-primary: #1556ac;
-	--theme-primary-hover: #2569c3;
-	--theme-on-primary: hsl(0, 0%, 100%);
-
-	--theme-bg: #fafafa;
-	--theme-on-bg: #0c0d0d;
-
-	--theme-surface-1: #eef1f3;
-	--theme-on-surface-1: #0c0d0d;
-
-	--theme-surface-2: #072650;
-	--theme-on-surface-2: #ffffff;
-}
-
-[data-theme='sand'] {
-	/* Theme Colors */
-	/* Theme Colors */
-	--theme-primary: #e38a20;
-	--theme-primary-hover: #eb870f;
-	--theme-on-primary: hsl(0, 0%, 100%);
-
-	--theme-bg: #fffffe;
-	--theme-on-bg: #5e4536;
-
-	--theme-surface-1: #ffecd9;
-	--theme-on-surface-1: #5e4536;
-
-	--theme-surface-2: #6a4d34;
-	--theme-on-surface-2: #ffffff;
-
-	--theme-button-border-radius: 0.5rem;
-}
+/* Legacy theme variations — keeping defaults for compatibility */
+[data-theme='earth'] { --theme-primary: #2c3e2d; --theme-primary-hover: #395a3b; --theme-on-primary: #fff; --theme-bg: #eeeff1; --theme-on-bg: #272f27; --theme-surface-1: #e6e4e0; --theme-on-surface-1: #272f27; --theme-surface-2: #c3d9c4; --theme-on-surface-2: #000; --theme-button-border-radius: 0.5rem; }
+[data-theme='ocean'] { --theme-primary: #1556ac; --theme-primary-hover: #2569c3; --theme-on-primary: #fff; --theme-bg: #fafafa; --theme-on-bg: #0c0d0d; --theme-surface-1: #eef1f3; --theme-on-surface-1: #0c0d0d; --theme-surface-2: #072650; --theme-on-surface-2: #fff; }
+[data-theme='sand'] { --theme-primary: #e38a20; --theme-primary-hover: #eb870f; --theme-on-primary: #fff; --theme-bg: #fffffe; --theme-on-bg: #5e4536; --theme-surface-1: #ffecd9; --theme-on-surface-1: #5e4536; --theme-surface-2: #6a4d34; --theme-on-surface-2: #fff; --theme-button-border-radius: 0.5rem; }

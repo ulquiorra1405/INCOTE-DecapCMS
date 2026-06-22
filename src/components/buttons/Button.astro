@@ -1,5 +1,5 @@
 ---
-const { href, unelevated, outlined, customIcon, onPrimary, newTab } =
+const { href, unelevated, outlined, customIcon, onPrimary, newTab, size } =
   Astro.props;
 
 const Tag = href ? 'a' : 'button';
@@ -8,59 +8,115 @@ const Tag = href ? 'a' : 'button';
 <Tag
   class={`btn ${unelevated && `btn--unelevated`} ${
     outlined && `btn--outlined`
-  } ${onPrimary && `btn--on-primary`}`}
+  } ${onPrimary && `btn--on-primary`} ${size === 'large' ? 'btn--large' : ''}`}
   href={href}
   target={`${newTab ? '_blank': ``}`}
   rel={`${newTab ? 'noopener noreferrer' : ``}`}
 >
-  <slot />
+  <span class="btn-text"><slot /></span>
   {customIcon && <span class="custom-icon__span"><slot name="icon">custom_icon</slot></span>}
 </Tag>
 
 <style>
   .btn {
     width: fit-content;
-    padding: 0.36rem 0.92rem;
+    padding: 0.65rem 1.5rem;
     margin-bottom: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--theme-primary);
+    gap: 0.4rem;
+    background: var(--theme-gradient-primary);
     color: var(--theme-on-primary);
     border: none;
     border-radius: var(--theme-button-border-radius);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: var(--theme-font-family-sans);
+    cursor: pointer;
+    transition: all var(--theme-transition-slow);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--theme-shadow-sm);
   }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity var(--theme-transition);
+  }
+
   .btn:hover {
-    background-color: var(--theme-primary-hover);
-  }
-  .btn--unelevated {
-    background-color: transparent;
-    color: var(--theme-on-bg);
-  }
-  .btn--unelevated:hover {
-    background-color: transparent;
-    opacity: var(--theme-primary-hover);
-  }
-  .btn--outlined {
-    color: var(--theme-primary);
-    background-color: transparent;
-    border: 2px solid var(--theme-primary);
-    transition: background-color var(--theme-transition);
-  }
-  .btn--outlined:hover {
-    background-color: var(--theme-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--theme-shadow-md);
     color: var(--theme-on-primary);
   }
+
+  .btn:hover::before {
+    opacity: 1;
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn--large {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+  }
+
+  .btn--unelevated {
+    background: transparent;
+    color: var(--theme-on-bg);
+    box-shadow: none;
+  }
+  .btn--unelevated:hover {
+    background: transparent;
+    color: var(--theme-primary);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .btn--outlined {
+    color: var(--theme-primary);
+    background: transparent;
+    border: 2px solid var(--theme-primary);
+    box-shadow: none;
+  }
+  .btn--outlined:hover {
+    background: var(--theme-gradient-primary);
+    color: var(--theme-on-primary);
+    border-color: transparent;
+  }
+
+  .btn--on-primary {
+    background: var(--theme-gradient-accent);
+    color: var(--theme-on-accent);
+  }
+  .btn--on-primary:hover {
+    box-shadow: var(--theme-shadow-glow);
+  }
+
   .custom-icon__span {
-    margin-left: 0.25rem;
     display: flex;
     align-items: center;
+    transition: transform var(--theme-transition);
+  }
+
+  .btn:hover .custom-icon__span {
+    transform: translateX(3px);
   }
 
   .custom-icon__span :global(svg) {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 
   a.btn {

@@ -1,13 +1,61 @@
-html,
-body {
-	height: 100%;
+/* Global Styles */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
-	max-width: 1920px;
-	margin: 0 auto;
-	background-color: var(--theme-bg);
-	position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: var(--theme-bg);
+  position: relative;
+  color: var(--theme-on-bg);
+  font-family: var(--theme-font-family-sans);
+  line-height: 1.6;
+}
+
+/* Tipografía mejorada */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--theme-font-family-sans);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  color: var(--theme-primary);
+  transition: color var(--theme-transition);
+}
+
+a:hover {
+  color: var(--theme-primary-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 pre {
@@ -18,4 +66,36 @@ pre {
 
 pre .language-id {
   display: none;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary-hover);
+}
+
+/* Animaciones globales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }

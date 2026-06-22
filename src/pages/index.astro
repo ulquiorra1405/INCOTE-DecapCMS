@@ -33,25 +33,34 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<!-- ¿Por qué INCOTE? -->
 	<Container>
 		<section class="why-section">
+			<div class="section-label">¿Por qué nosotros?</div>
 			<h2>¿Por qué los estudiantes nos eligen?</h2>
 			<div class="why-grid">
 				<div class="why-card">
-					<span class="why-icon">&#x1F393;</span>
+					<div class="why-icon-wrapper">
+						<span class="why-icon">&#x1F393;</span>
+					</div>
 					<h3>Certificación INFOTEP</h3>
 					<p>Todos nuestros cursos están certificados por INFOTEP, lo que avala tu aprendizaje ante instituciones y empleadores.</p>
 				</div>
 				<div class="why-card">
-					<span class="why-icon">&#x1F468;&#x200D;&#x1F3EB;</span>
+					<div class="why-icon-wrapper">
+						<span class="why-icon">&#x1F468;&#x200D;&#x1F3EB;</span>
+					</div>
 					<h3>Instructores Calificados</h3>
 					<p>Contamos con personal altamente capacitado e instruido en cada una de sus áreas.</p>
 				</div>
 				<div class="why-card">
-					<span class="why-icon">&#x1F4F1;</span>
+					<div class="why-icon-wrapper">
+						<span class="why-icon">&#x1F4F1;</span>
+					</div>
 					<h3>Plataformas Digitales</h3>
 					<p>Aprende desde cualquier lugar con nuestras plataformas digitales y horarios flexibles.</p>
 				</div>
 				<div class="why-card">
-					<span class="why-icon">&#x1F3E2;</span>
+					<div class="why-icon-wrapper">
+						<span class="why-icon">&#x1F3E2;</span>
+					</div>
 					<h3>Infraestructura</h3>
 					<p>Instalaciones cómodas y equipadas para que te enfoques en aprender en nuestras 3 sucursales.</p>
 				</div>
@@ -62,54 +71,61 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<!-- Cursos Destacados -->
 	<Container>
 		<section class="feature-card__section">
+			<div class="section-label">Nuestra oferta</div>
 			<h2>Cursos Destacados</h2>
-			<p>Los cursos más buscados y elegidos por nuestros estudiantes.</p>
+			<p class="section-subtitle">Los cursos más buscados y elegidos por nuestros estudiantes.</p>
 			<div class="feature-card__grid">
-				<div class="curso-card">
-					<div class="curso-card__image">
-						<img src="/assets/images/placeholder-screenshot.png" alt="Cosmiatría" />
-					</div>
-					<div class="curso-card__body">
-						<span class="curso-card__categoria">Estética</span>
-						<h3>Cosmiatría Básica y Avanzada</h3>
-						<p class="curso-card__desc">Limpieza facial, tratamientos estéticos avanzados.</p>
-						<div class="curso-card__meta">
-							<span>Domingos, 8:00 a.m.</span>
-							<span>3 meses (50 horas)</span>
+				<a href="/cursos/cosmiatria-basica-y-avanzada" class="curso-card-link">
+					<article class="curso-card">
+						<div class="curso-card__image">
+							<img src="/assets/images/placeholder-screenshot.png" alt="Cosmiatría" />
+							<span class="curso-card__categoria">Estética</span>
 						</div>
-						<Button href="/cursos/cosmiatria-basica-y-avanzada" unelevated>Ver más</Button>
-					</div>
-				</div>
-				<div class="curso-card">
-					<div class="curso-card__image">
-						<img src="/assets/images/placeholder-screenshot.png" alt="Diseño Gráfico" />
-					</div>
-					<div class="curso-card__body">
-						<span class="curso-card__categoria">Diseño</span>
-						<h3>Diseño Gráfico 101</h3>
-						<p class="curso-card__desc">Photoshop e Illustrator, diseño visual para redes.</p>
-						<div class="curso-card__meta">
-							<span>Sábados, 9:00 a.m.</span>
-							<span>3 meses (50 horas)</span>
+						<div class="curso-card__body">
+							<h3>Cosmiatría Básica y Avanzada</h3>
+							<p class="curso-card__desc">Limpieza facial, tratamientos estéticos avanzados.</p>
+							<div class="curso-card__info">
+								<span>&#128197; Domingos, 8:00 a.m.</span>
+								<span>&#9200; 3 meses (50 horas)</span>
+							</div>
+							<span class="curso-card__link">Ver curso &#8594;</span>
 						</div>
-						<Button href="/cursos/diseno-grafico-101" unelevated>Ver más</Button>
-					</div>
-				</div>
-				<div class="curso-card">
-					<div class="curso-card__image">
-						<img src="/assets/images/placeholder-screenshot.png" alt="Barbería" />
-					</div>
-					<div class="curso-card__body">
-						<span class="curso-card__categoria">Estética</span>
-						<h3>Barbería</h3>
-						<p class="curso-card__desc">Técnicas de corte y afeitado modernas.</p>
-						<div class="curso-card__meta">
-							<span>Sábados, 9:00 a.m.</span>
-							<span>3 meses</span>
+					</article>
+				</a>
+				<a href="/cursos/diseno-grafico-101" class="curso-card-link">
+					<article class="curso-card">
+						<div class="curso-card__image">
+							<img src="/assets/images/placeholder-screenshot.png" alt="Diseño Gráfico" />
+							<span class="curso-card__categoria">Diseño</span>
 						</div>
-						<Button href="/cursos/barberia" unelevated>Ver más</Button>
-					</div>
-				</div>
+						<div class="curso-card__body">
+							<h3>Diseño Gráfico 101</h3>
+							<p class="curso-card__desc">Photoshop e Illustrator, diseño visual para redes.</p>
+							<div class="curso-card__info">
+								<span>&#128197; Sábados, 9:00 a.m.</span>
+								<span>&#9200; 3 meses (50 horas)</span>
+							</div>
+							<span class="curso-card__link">Ver curso &#8594;</span>
+						</div>
+					</article>
+				</a>
+				<a href="/cursos/barberia" class="curso-card-link">
+					<article class="curso-card">
+						<div class="curso-card__image">
+							<img src="/assets/images/placeholder-screenshot.png" alt="Barbería" />
+							<span class="curso-card__categoria">Estética</span>
+						</div>
+						<div class="curso-card__body">
+							<h3>Barbería</h3>
+							<p class="curso-card__desc">Técnicas de corte y afeitado modernas.</p>
+							<div class="curso-card__info">
+								<span>&#128197; Sábados, 9:00 a.m.</span>
+								<span>&#9200; 3 meses</span>
+							</div>
+							<span class="curso-card__link">Ver curso &#8594;</span>
+						</div>
+					</article>
+				</a>
 			</div>
 			<div class="cta-center">
 				<Button href="/cursos">Ver Todos los Cursos</Button>
@@ -117,36 +133,34 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		</section>
 	</Container>
 
+	<!-- Separator wave -->
+	<div class="section-divider">
+		<svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" fill="var(--theme-surface-1)"/></svg>
+	</div>
+
 	<!-- Instructores -->
 	<Container>
 		<section class="instructors-section">
+			<div class="section-label">Equipo</div>
 			<h2>Conoce a nuestros capacitadores</h2>
 			<div class="instructors-grid">
 				<div class="instructor-card">
-					<div class="instructor-avatar">
-						<img src="/assets/images/home/screenshots/contact" alt="Tadaichi Lopez" />
-					</div>
+					<div class="instructor-avatar" style="background: var(--theme-gradient-primary);">TL</div>
 					<h3>Tadaichi Lopez</h3>
 					<span class="instructor-area">Inglés</span>
 				</div>
 				<div class="instructor-card">
-					<div class="instructor-avatar">
-						<img src="/assets/images/home/screenshots/about" alt="Jennelly Martínez" />
-					</div>
+					<div class="instructor-avatar" style="background: var(--theme-gradient-accent); color: var(--theme-on-accent);">JM</div>
 					<h3>Jennelly Martínez</h3>
 					<span class="instructor-area">Farmacia y Visitador a Médico</span>
 				</div>
 				<div class="instructor-card">
-					<div class="instructor-avatar">
-						<img src="/assets/images/home/screenshots/legal" alt="Sulem Hilario" />
-					</div>
+					<div class="instructor-avatar" style="background: var(--theme-gradient-primary);">SH</div>
 					<h3>Sulem Hilario</h3>
 					<span class="instructor-area">Secretariado</span>
 				</div>
 				<div class="instructor-card">
-					<div class="instructor-avatar">
-						<img src="/assets/images/home/screenshots/blog-post" alt="Carmen Vega" />
-					</div>
+					<div class="instructor-avatar" style="background: var(--theme-gradient-accent); color: var(--theme-on-accent);">CV</div>
 					<h3>Carmen Vega</h3>
 					<span class="instructor-area">Ventas y Emprendedurismo</span>
 				</div>
@@ -157,17 +171,20 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<!-- Testimonios -->
 	<Container>
 		<section class="testimonials-section">
+			<div class="section-label">Testimonios</div>
 			<h2>¿Qué dicen nuestros alumnos?</h2>
 			<div class="testimonials-grid">
 				<blockquote class="testimonial-card">
-					<p>¡Fue lo mejor! Mis amigas y mi profesora compartíamos muchas cosas juntas, éramos una familia numerosa y nos queríamos mucho. ¡Me encantó!</p>
+					<div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+					<p>"¡Fue lo mejor! Mis amigas y mi profesora compartíamos muchas cosas juntas, éramos una familia numerosa y nos queríamos mucho. ¡Me encantó!"</p>
 					<footer>
 						<strong>Susana Reynoso</strong>
 						<span>Estudiante</span>
 					</footer>
 				</blockquote>
 				<blockquote class="testimonial-card">
-					<p>Excelente institución para la formación en la modalidad técnica.</p>
+					<div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+					<p>"Excelente institución para la formación en la modalidad técnica."</p>
 					<footer>
 						<strong>Dr. Carlos Alfredo Muñoz</strong>
 						<span>Estudiante</span>
@@ -182,12 +199,29 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		<section class="cta-final">
 			<h2>¿Listo para empezar tu formación?</h2>
 			<p>Forma parte de INCOTE hoy mismo. Contamos con cursos en muchas áreas y en distintos horarios para que puedas formarte a tu ritmo.</p>
-			<Button href="/contacto" size="large">Contáctanos</Button>
+			<Button href="/contacto" size="large" onPrimary>Contáctanos</Button>
 		</section>
 	</Container>
 </Layout>
 
 <style>
+	/* Section Label */
+	.section-label {
+		display: inline-block;
+		color: var(--theme-accent);
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.5rem;
+	}
+	.section-subtitle {
+		font-size: 1.05rem;
+		opacity: 0.7;
+		margin-bottom: 2.5rem;
+		max-width: 500px;
+	}
+
 	/* Stats */
 	.stats-section {
 		display: grid;
@@ -200,23 +234,33 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 2rem 1rem;
+		justify-content: center;
+		padding: 2.5rem 1rem;
 		background: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
+		box-shadow: var(--theme-shadow-sm);
+		transition: transform var(--theme-transition), box-shadow var(--theme-transition);
+	}
+	.stat-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--theme-shadow-md);
 	}
 	.stat-number {
 		font-size: 2.5rem;
-		font-weight: 700;
+		font-weight: 800;
 		color: var(--theme-primary);
 		font-family: var(--theme-font-family-serif);
+		line-height: 1;
+		margin-bottom: 0.25rem;
 	}
 	.stat-label {
-		font-size: 0.9rem;
-		opacity: 0.8;
+		font-size: 0.85rem;
+		opacity: 0.7;
 	}
 	.stat-sub {
-		font-size: 0.75rem;
-		opacity: 0.6;
+		font-size: 0.7rem;
+		opacity: 0.5;
+		margin-top: -0.25rem;
 	}
 
 	/* Why */
@@ -225,7 +269,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		text-align: center;
 	}
 	.why-section h2 {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 	}
 	.why-grid {
 		display: grid;
@@ -233,23 +277,39 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		gap: 1.5rem;
 	}
 	.why-card {
-		padding: 2rem 1rem;
-		background: var(--theme-surface-1);
+		padding: 2.5rem 1.5rem;
+		background: var(--theme-bg);
 		border-radius: var(--theme-shape-radius);
 		text-align: center;
+		box-shadow: var(--theme-shadow-sm);
+		border: 1px solid rgba(0,0,0,0.04);
+		transition: transform var(--theme-transition-slow), box-shadow var(--theme-transition-slow);
+	}
+	.why-card:hover {
+		transform: translateY(-6px);
+		box-shadow: var(--theme-shadow-lg);
+	}
+	.why-icon-wrapper {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: var(--theme-surface-2);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 1.25rem;
 	}
 	.why-icon {
-		font-size: 2.5rem;
-		display: block;
-		margin-bottom: 1rem;
+		font-size: 1.5rem;
 	}
 	.why-card h3 {
-		margin-bottom: 0.5rem;
-		font-size: 1.1rem;
+		margin-bottom: 0.75rem;
+		font-size: 1.05rem;
 	}
 	.why-card p {
 		font-size: 0.9rem;
-		opacity: 0.8;
+		opacity: 0.7;
+		line-height: 1.6;
 	}
 
 	/* Featured Courses */
@@ -257,74 +317,112 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		margin: var(--section-margin) auto;
 	}
 	.feature-card__section h2 {
-		margin-bottom: 0.5rem;
-	}
-	.feature-card__section > p {
-		margin-bottom: 2rem;
-		opacity: 0.7;
+		margin-bottom: 0.25rem;
 	}
 	.feature-card__grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--theme-grid-gap);
 	}
+	.curso-card-link {
+		text-decoration: none;
+		color: inherit;
+	}
 	.curso-card {
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
-		background: var(--theme-surface-1);
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		background: var(--theme-bg);
+		box-shadow: var(--theme-shadow-sm);
+		transition: transform var(--theme-transition-slow), box-shadow var(--theme-transition-slow);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid rgba(0,0,0,0.04);
 	}
 	.curso-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+		transform: translateY(-6px);
+		box-shadow: var(--theme-shadow-lg);
 	}
 	.curso-card__image {
-		height: 180px;
+		height: 200px;
 		overflow: hidden;
+		position: relative;
 	}
 	.curso-card__image img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		transition: transform var(--theme-transition-slow);
 	}
-	.curso-card__body {
-		padding: 1.25rem;
+	.curso-card:hover .curso-card__image img {
+		transform: scale(1.05);
 	}
 	.curso-card__categoria {
+		position: absolute;
+		bottom: 0.75rem;
+		left: 0.75rem;
 		display: inline-block;
-		background: var(--theme-primary);
-		color: var(--theme-on-primary);
-		padding: 0.2rem 0.6rem;
+		background: rgba(30, 58, 95, 0.9);
+		backdrop-filter: blur(4px);
+		color: #fff;
+		padding: 0.25rem 0.75rem;
 		border-radius: 0.25rem;
-		font-size: 0.75rem;
+		font-size: 0.7rem;
 		font-weight: 600;
-		margin-bottom: 0.5rem;
 		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	.curso-card__body {
+		padding: 1.5rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
 	}
 	.curso-card__body h3 {
 		font-size: 1.1rem;
-		margin-bottom: 0.25rem;
-	}
-	.curso-card__rating {
-		color: var(--theme-accent);
-		font-size: 0.85rem;
-		margin-bottom: 0.25rem;
-	}
-	.curso-card__instructor {
-		font-size: 0.85rem;
-		opacity: 0.7;
 		margin-bottom: 0.5rem;
 	}
-	.curso-card__meta {
+	.curso-card__desc {
+		font-size: 0.85rem;
+		opacity: 0.65;
+		margin-bottom: 1rem;
+		line-height: 1.5;
+		flex: 1;
+	}
+	.curso-card__info {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		gap: 0.25rem;
 		font-size: 0.8rem;
 		opacity: 0.6;
 		margin-bottom: 1rem;
 	}
+	.curso-card__link {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--theme-primary);
+		transition: gap var(--theme-transition);
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+	.curso-card:hover .curso-card__link {
+		gap: 0.5rem;
+	}
 	.cta-center {
 		text-align: center;
-		margin-top: 2rem;
+		margin-top: 2.5rem;
+	}
+
+	/* Section Divider */
+	.section-divider {
+		margin: 0;
+		line-height: 0;
+	}
+	.section-divider svg {
+		width: 100%;
+		height: 60px;
+		display: block;
 	}
 
 	/* Instructors */
@@ -333,7 +431,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		text-align: center;
 	}
 	.instructors-section h2 {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 	}
 	.instructors-grid {
 		display: grid;
@@ -341,23 +439,30 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		gap: 1.5rem;
 	}
 	.instructor-card {
-		padding: 1.5rem;
-		background: var(--theme-surface-1);
+		padding: 2rem 1.5rem;
+		background: var(--theme-bg);
 		border-radius: var(--theme-shape-radius);
 		text-align: center;
+		box-shadow: var(--theme-shadow-sm);
+		border: 1px solid rgba(0,0,0,0.04);
+		transition: transform var(--theme-transition), box-shadow var(--theme-transition);
+	}
+	.instructor-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--theme-shadow-md);
 	}
 	.instructor-avatar {
 		width: 80px;
 		height: 80px;
 		border-radius: 50%;
-		overflow: hidden;
-		margin: 0 auto 1rem;
-		border: 3px solid var(--theme-accent);
-	}
-	.instructor-avatar img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		margin: 0 auto 1.25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		font-size: 1.5rem;
+		font-weight: 700;
+		font-family: var(--theme-font-family-serif);
 	}
 	.instructor-card h3 {
 		font-size: 1rem;
@@ -365,7 +470,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	}
 	.instructor-area {
 		font-size: 0.85rem;
-		opacity: 0.7;
+		opacity: 0.65;
 	}
 
 	/* Testimonials */
@@ -374,7 +479,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		text-align: center;
 	}
 	.testimonials-section h2 {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 	}
 	.testimonials-grid {
 		display: grid;
@@ -382,16 +487,39 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		gap: 1.5rem;
 	}
 	.testimonial-card {
-		padding: 2rem;
-		background: var(--theme-surface-1);
+		padding: 2.5rem;
+		background: var(--theme-bg);
 		border-radius: var(--theme-shape-radius);
 		text-align: left;
-		border-left: 4px solid var(--theme-accent);
 		margin: 0;
+		box-shadow: var(--theme-shadow-sm);
+		border: 1px solid rgba(0,0,0,0.04);
+		position: relative;
+	}
+	.testimonial-card::before {
+		content: '"';
+		position: absolute;
+		top: 1rem;
+		left: 1.5rem;
+		font-size: 4rem;
+		line-height: 1;
+		color: var(--theme-accent);
+		opacity: 0.15;
+		font-family: var(--theme-font-family-serif);
+	}
+	.testimonial-stars {
+		color: var(--theme-accent);
+		font-size: 1rem;
+		margin-bottom: 1rem;
+		letter-spacing: 0.15em;
 	}
 	.testimonial-card p {
 		font-style: italic;
-		margin-bottom: 1rem;
+		font-size: 1rem;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+		position: relative;
+		z-index: 1;
 	}
 	.testimonial-card footer strong {
 		display: block;
@@ -399,26 +527,38 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	}
 	.testimonial-card footer span {
 		font-size: 0.8rem;
-		opacity: 0.6;
+		opacity: 0.55;
 	}
 
 	/* CTA Final */
 	.cta-final {
 		margin: var(--section-margin) auto;
-		padding: 4rem 2rem;
-		background: var(--theme-primary);
-		color: var(--theme-on-primary);
+		padding: 5rem 2rem;
+		background: var(--theme-gradient-primary);
 		border-radius: var(--theme-shape-radius);
 		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+	.cta-final::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at 20% 80%, rgba(245,197,24,0.1) 0%, transparent 50%),
+		            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
 	}
 	.cta-final h2 {
 		font-size: 2rem;
 		margin-bottom: 1rem;
+		color: #fff;
+		position: relative;
 	}
 	.cta-final p {
-		max-width: 600px;
+		max-width: 550px;
 		margin: 0 auto 2rem;
-		opacity: 0.85;
+		opacity: 0.8;
+		color: rgba(255,255,255,0.9);
+		position: relative;
 	}
 
 	/* Responsive */

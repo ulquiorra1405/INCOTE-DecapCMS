@@ -9,37 +9,41 @@ const seo = {
 ---
 
 <Layout {seo}>
-	<Container>
-		<section class="contact-header">
-			<h1>Contáctanos</h1>
-			<p>Estamos listos para atenderte. Elige la sucursal más cercana o escríbenos.</p>
-		</section>
-	</Container>
+	<div class="contact-hero">
+		<Container>
+			<div class="contact-hero__content">
+				<span class="section-label">Contáctanos</span>
+				<h1>Estamos aquí para ayudarte</h1>
+				<p>Elige la sucursal más cercana o escríbenos. Te atenderemos con gusto.</p>
+			</div>
+		</Container>
+	</div>
 
 	<Container>
 		<section class="contact-grid">
 			<div class="contact-card">
-				<div class="contact-icon">&#x1F3E2;</div>
+				<div class="contact-card__icon">&#x1F3E2;</div>
 				<h3>Santo Domingo</h3>
-				<p>Av. San Vicente de Paúl 110, Santo Domingo Este</p>
-				<p class="contact-phone">&#x1F4DE; (809) 788-1353</p>
+				<p class="contact-address">Av. San Vicente de Paúl 110, Santo Domingo Este</p>
+				<a href="tel:+18097881353" class="contact-phone">(809) 788-1353</a>
 			</div>
 			<div class="contact-card">
-				<div class="contact-icon">&#x1F3E2;</div>
+				<div class="contact-card__icon">&#x1F3E2;</div>
 				<h3>Santiago</h3>
-				<p>Calle Gral. Luperón No.67, Centro de la Ciudad</p>
-				<p class="contact-phone">&#x1F4DE; (809) 724-1414</p>
+				<p class="contact-address">Calle Gral. Luperón No.67, Centro de la Ciudad</p>
+				<a href="tel:+18097241414" class="contact-phone">(809) 724-1414</a>
 			</div>
 			<div class="contact-card">
-				<div class="contact-icon">&#x1F3E2;</div>
+				<div class="contact-card__icon">&#x1F3E2;</div>
 				<h3>San Juan de la Maguana</h3>
-				<p>Sucursal principal, fundada en 1984</p>
-				<p class="contact-phone">&#x1F4DE; (809) 557-1066</p>
+				<p class="contact-address">Sucursal principal, fundada en 1984</p>
+				<a href="tel:+18095571066" class="contact-phone">(809) 557-1066</a>
 			</div>
-			<div class="contact-card contact-card--wide">
-				<div class="contact-icon">&#x1F4E7;</div>
+			<div class="contact-card contact-card--email">
+				<div class="contact-card__icon">&#x1F4E7;</div>
 				<h3>Email</h3>
-				<p>infoincote@gmail.com</p>
+				<p class="contact-address">Escríbenos y te responderemos a la brevedad</p>
+				<a href="mailto:infoincote@gmail.com" class="contact-phone">infoincote@gmail.com</a>
 			</div>
 		</section>
 	</Container>
@@ -49,93 +53,119 @@ const seo = {
 			<h2>¿Listo para empezar tu formación?</h2>
 			<p>Forma parte de INCOTE hoy mismo. Llámanos, escríbenos o visita cualquiera de nuestras sucursales.</p>
 			<div class="contact-cta__btns">
-				<Button href="tel:+18097881353">Llamar a Santo Domingo</Button>
-				<Button href="mailto:infoincote@gmail.com" unelevated>Enviar Email</Button>
+				<Button href="tel:+18097881353" customIcon>
+					Llamar a Santo Domingo
+					<Fragment slot="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></Fragment>
+				</Button>
+				<Button href="mailto:infoincote@gmail.com" unelevated customIcon>
+					Enviar Email
+					<Fragment slot="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></Fragment>
+				</Button>
 			</div>
 		</section>
 	</Container>
 </Layout>
 
 <style>
-	.contact-header {
-		margin: var(--section-margin) auto;
-		text-align: center;
+	.section-label {
+		display: inline-block;
+		color: var(--theme-accent);
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.5rem;
+	}
+
+	.contact-hero {
+		background: var(--theme-gradient-hero);
+		padding: 5rem 0;
+		color: #fff;
+		border-radius: 0 0 var(--theme-shape-radius) var(--theme-shape-radius);
+	}
+	.contact-hero__content {
 		max-width: 600px;
+		text-align: center;
+		margin: 0 auto;
 	}
-	.contact-header h1 {
-		margin-bottom: 1rem;
-	}
-	.contact-header p {
-		opacity: 0.7;
-		font-size: 1.05rem;
-	}
+	.contact-hero__content h1 { color: #fff; margin-bottom: 1rem; }
+	.contact-hero__content p { opacity: 0.8; font-size: 1.1rem; }
 
 	.contact-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
 		margin: var(--section-margin) auto;
 	}
 	.contact-card {
-		padding: 2rem;
-		background: var(--theme-surface-1);
+		padding: 2.5rem 2rem;
+		background: var(--theme-bg);
 		border-radius: var(--theme-shape-radius);
 		text-align: center;
+		box-shadow: var(--theme-shadow-sm);
+		border: 1px solid rgba(0,0,0,0.04);
+		transition: transform var(--theme-transition), box-shadow var(--theme-transition);
 	}
-	.contact-card--wide {
+	.contact-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--theme-shadow-md);
+	}
+	.contact-card--email {
 		grid-column: 1 / -1;
 		max-width: 400px;
 		justify-self: center;
 		width: 100%;
 	}
-	.contact-icon {
-		font-size: 2.5rem;
+	.contact-card__icon {
+		font-size: 2rem;
 		margin-bottom: 1rem;
 	}
 	.contact-card h3 {
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.75rem;
 	}
-	.contact-card p {
-		font-size: 0.95rem;
-		opacity: 0.8;
+	.contact-address {
+		font-size: 0.9rem;
+		opacity: 0.65;
 		line-height: 1.5;
-		margin-bottom: 0.25rem;
+		margin-bottom: 1rem;
 	}
 	.contact-phone {
-		font-weight: 600;
-		font-size: 1.05rem !important;
-		opacity: 1 !important;
+		display: inline-block;
+		font-weight: 700;
+		font-size: 1.1rem;
 		color: var(--theme-primary);
-		margin-top: 0.5rem;
+		text-decoration: none;
+		padding: 0.5rem 1.25rem;
+		background: var(--theme-surface-2);
+		border-radius: 0.5rem;
+		transition: background var(--theme-transition), color var(--theme-transition);
+	}
+	.contact-phone:hover {
+		background: var(--theme-primary);
+		color: var(--theme-on-primary);
 	}
 
 	.contact-cta {
 		margin: var(--section-margin) auto;
 		padding: 4rem 2rem;
-		background: var(--theme-primary);
-		color: var(--theme-on-primary);
+		background: var(--theme-gradient-primary);
 		border-radius: var(--theme-shape-radius);
 		text-align: center;
+		color: #fff;
+		position: relative;
+		overflow: hidden;
 	}
-	.contact-cta h2 {
-		font-size: 2rem;
-		margin-bottom: 1rem;
+	.contact-cta::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at 30% 70%, rgba(245,197,24,0.1), transparent);
 	}
-	.contact-cta p {
-		max-width: 500px;
-		margin: 0 auto 2rem;
-		opacity: 0.85;
-	}
-	.contact-cta__btns {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+	.contact-cta h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; position: relative; }
+	.contact-cta p { max-width: 500px; margin: 0 auto 2rem; opacity: 0.8; position: relative; }
+	.contact-cta__btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
-	@media (max-width: 600px) {
-		.contact-grid {
-			grid-template-columns: 1fr;
-		}
+	@media (max-width: 768px) {
+		.contact-grid { grid-template-columns: 1fr; }
 	}
 </style>
