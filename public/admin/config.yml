@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: main
+  squash_merges: true
+
+# URL del sitio (cambiar cuando despliegues)
+site_url: https://incote.edu.do
+display_url: https://incote.edu.do
+logo_url: /favicon.png
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "cursos"
+    label: "Cursos"
+    label_singular: "Curso"
+    folder: "src/pages/cursos"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: .md
+    format: frontmatter
+    preview_path: "cursos/{{slug}}"
+    sort: "titulo:asc"
+    fields:
+      - { label: "Título del curso", name: "titulo", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string", hint: "Ej: barberia-avanzada. Déjalo vacío para autogenerarlo." }
+      - label: "Categoría"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Tecnología", value: "Tecnología" }
+          - { label: "Salud", value: "Salud" }
+          - { label: "Estética", value: "Estética" }
+          - { label: "Diseño", value: "Diseño" }
+          - { label: "Servicios", value: "Servicios" }
+          - { label: "Manejo y Gestión", value: "Manejo y Gestión" }
+          - { label: "Informática", value: "Informatica" }
+          - { label: "Idiomas", value: "Idiomas" }
+          - { label: "Belleza y Estética", value: "Belleza y estética" }
+      - { label: "Descripción corta", name: "descripcion_corta", widget: "text", hint: "Aparece en la tarjeta del curso (máx 200 caracteres)" }
+      - { label: "Descripción larga", name: "descripcion_larga", widget: "markdown", hint: "Contenido completo para la página del curso" }
+      - { label: "Horario", name: "horario", widget: "string", hint: "Ej: Sábados, 9:00 a.m. - 12:00 p.m." }
+      - { label: "Duración", name: "duracion", widget: "string", hint: "Ej: 3 meses (50 horas)" }
+      - label: "Modalidad"
+        name: "modalidad"
+        widget: "select"
+        options: ["Presencial", "Virtual", "Híbrido"]
+      - { label: "Imagen del curso", name: "imagen", widget: "image", hint: "Foto ilustrativa del curso" }
+      - { label: "Instructor", name: "instructor", widget: "string", required: false }
+      - { label: "Número de estudiantes", name: "estudiantes", widget: "string", required: false, hint: "Ej: +60 estudiantes" }
+      - { label: "Precio inscripción", name: "precio_inscripcion", widget: "string", required: false, hint: "Ej: RD$3,500" }
+      - { label: "Precio mensualidad", name: "precio_mensualidad", widget: "string", required: false, hint: "Ej: RD$2,000" }
+
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Artículo"
+    folder: "src/pages/blog/posts"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: .mdx
+    format: frontmatter
+    preview_path: "blog/{{slug}}"
+    sort: "publishDate:desc"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/Post.astro" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Fecha de publicación", name: "publishDate", widget: "datetime", format: "MMMM d, yyyy" }
+      - { label: "Imagen destacada", name: "featuredImage", widget: "image", required: false }
+      - { label: "Extracto", name: "excerpt", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }

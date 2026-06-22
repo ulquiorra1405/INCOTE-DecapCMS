@@ -1,3 +1,8 @@
 [build]
   publish = "dist/"
   command = "npm run build"
+
+# Decap CMS / Netlify Identity se configura desde el dashboard de Netlify:
+# 1. Site Settings → Identity → Enable Identity
+# 2. Identity → Services → Enable Git Gateway
+# 3. Agregar usuarios (invite) o permitir registro

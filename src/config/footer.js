@@ -1,80 +1,79 @@
 export const footerSocials = [
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/jaydanurwin',
-    icon: "mdi:twitter",
+    name: 'Facebook',
+    url: 'https://www.facebook.com/InstitutoTecnicoComercialINCOTE/',
+    icon: "mdi:facebook",
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/incote_oficial/',
+    icon: "mdi:instagram",
   },
   {
     name: 'Youtube',
-    url: 'https://youtube.com/@jaydanurwin',
+    url: 'https://www.youtube.com/@INCOTE',
     icon: "mdi:youtube",
-  },
-  {
-    name: 'Github',
-    url: 'https://github.com/jaydanurwin',
-    icon: "mdi:github",
-  },
-  {
-    name: 'Discord',
-    url: 'https://astro.build/chat',
-    icon: "ic:baseline-discord",
   },
 ]
 
 export const footerLists = [
 	{
-		title: 'Landing Pages',
+		title: 'Cursos',
 		items: [
 			{
-				title: 'Landing Page 1',
-				slug: '/landing-pages/landing-1',
+				title: 'Ver todos',
+				slug: '/cursos',
 			},
 			{
-				title: 'Landing Page 2',
-				slug: '/landing-pages/landing-2',
+				title: 'Tecnología',
+				slug: '/cursos?categoria=tecnologia',
 			},
-      // {
-			// 	title: 'Landing Page 3',
-			// 	slug: '/landing-pages/landing-3',
-			// },
+			{
+				title: 'Estética',
+				slug: '/cursos?categoria=estetica',
+			},
+			{
+				title: 'Salud',
+				slug: '/cursos?categoria=salud',
+			},
 		],
 	},
 	{
-		title: 'Company',
+		title: 'Institución',
 		items: [
 			{
-				title: 'About',
-				slug: '/company/about',
+				title: 'Nosotros',
+				slug: '/nosotros',
 			},
 			{
 				title: 'Blog',
 				slug: '/blog',
 			},
 			{
-				title: 'Contact',
-				slug: '/company/contact',
+				title: 'Contacto',
+				slug: '/contacto',
 			},
 		],
 	},
 	{
-		title: 'Theme',
+		title: 'Contacto',
 		items: [
 			{
-				title: 'Get Started',
-				slug: '/theme/get-started',
+				title: 'Santo Domingo: (809) 788-1353',
+				slug: 'tel:+18097881353',
 			},
 			{
-				title: 'Style Guide',
-				slug: '/theme/style-guide',
+				title: 'Santiago: (809) 724-1414',
+				slug: 'tel:+18097241414',
 			},
-      {
-        title: 'Theme Setup',
-        slug: '/theme/theme-setup',
-      },
-      {
-        title: 'Customizing Odyssey',
-        slug: '/theme/customizing-odyssey',
-      }
+			{
+				title: 'San Juan: (809) 557-1066',
+				slug: 'tel:+18095571066',
+			},
+			{
+				title: 'Email: infoincote@gmail.com',
+				slug: 'mailto:infoincote@gmail.com',
+			},
 		],
 	},
 ];

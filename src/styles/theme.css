@@ -1,22 +1,26 @@
 :root {
-	/* Theme Colors */
-	--theme-primary: hsl(0, 0%, 0%);
-	--theme-primary-hover: hsl(0, 0%, 20%);
+	/* Theme Colors — INCOTE Brand */
+	--theme-primary: #1E3A5F;
+	--theme-primary-hover: #2A4F7F;
 	--theme-on-primary: #fff;
 
-	--theme-bg: #fff;
-	--theme-on-bg: #000;
+	--theme-accent: #F5C518;
+	--theme-accent-hover: #D4A800;
+	--theme-on-accent: #1E3A5F;
 
-	--theme-surface-1: #f2f2f2;
-	--theme-on-surface-1: #000;
+	--theme-bg: #ffffff;
+	--theme-on-bg: #1A1A2E;
 
-	--theme-surface-2: #cce6d0;
-	--theme-on-surface-2: #000;
+	--theme-surface-1: #F0F2F5;
+	--theme-on-surface-1: #1A1A2E;
+
+	--theme-surface-2: #E8F0FE;
+	--theme-on-surface-2: #1E3A5F;
 
 	/* Theme Shapes */
 	/* Set this to 0 if you want all of the rounded cards, images, etc to be straight edges */
-	--theme-shape-radius: clamp(1rem, 2rem, 3rem);
-	--theme-button-border-radius: 3rem;
+	--theme-shape-radius: clamp(0.75rem, 1.5rem, 2.5rem);
+	--theme-button-border-radius: 0.5rem;
 
 	/* Theme Transition */
 	--theme-transition: 0.2s ease-in-out;
@@ -31,32 +35,35 @@
 	--theme-blog-post-header-width: 1200px;
 
 	/* Theme Fonts */
-	--theme-font-family-serif: 'Roboto Serif', Georgia, Cambria, 'Times New Roman',
+	--theme-font-family-serif: 'Merriweather', Georgia, Cambria, 'Times New Roman',
 		Times, serif;
-	--theme-font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont,
+	--theme-font-family-sans: 'Poppins', -apple-system, BlinkMacSystemFont,
 		sans-serif;
 }
 
 [data-theme='default'] {
 	color-scheme: light;
-	/* Theme Colors */
-	--theme-primary: hsl(0, 0%, 0%);
-	--theme-primary-hover: hsl(0, 0%, 20%);
+	/* Theme Colors — INCOTE Brand */
+	--theme-primary: #1E3A5F;
+	--theme-primary-hover: #2A4F7F;
 	--theme-on-primary: #fff;
 
-	--theme-bg: #fff;
-	--theme-on-bg: #000;
+	--theme-accent: #F5C518;
+	--theme-accent-hover: #D4A800;
+	--theme-on-accent: #1E3A5F;
 
-	--theme-surface-1: #f2f2f2;
-	--theme-on-surface-1: #000;
+	--theme-bg: #ffffff;
+	--theme-on-bg: #1A1A2E;
 
-	--theme-surface-2: #cce6d0;
-	--theme-on-surface-2: #000;
+	--theme-surface-1: #F0F2F5;
+	--theme-on-surface-1: #1A1A2E;
+
+	--theme-surface-2: #E8F0FE;
+	--theme-on-surface-2: #1E3A5F;
 
 	/* Theme Shape */
-	/* Set this to 0 if you want all of the rounded cards, images, etc to be straight edges */
-	--theme-shape-radius: clamp(1rem, 2rem, 3rem);
-	--theme-button-border-radius: 3rem;
+	--theme-shape-radius: clamp(0.75rem, 1.5rem, 2.5rem);
+	--theme-button-border-radius: 0.5rem;
 
 	/* Theme Transition */
 	--theme-transition: 0.2s ease-in-out;
@@ -73,21 +80,25 @@
 
 [data-theme='dark'] {
 	color-scheme: dark;
-	/* Theme Colors */
-	--theme-primary: hsl(0, 0%, 100%);
-	--theme-primary-hover: hsl(0, 0%, 90%);
-	--theme-on-primary: hsl(0, 0%, 0%);
+	/* Theme Colors — INCOTE Dark */
+	--theme-primary: #F5C518;
+	--theme-primary-hover: #FFD640;
+	--theme-on-primary: #1E3A5F;
 
-	--theme-bg: hsl(0, 0%, 2%);
-	--theme-on-bg: hsl(0, 0%, 100%);
+	--theme-accent: #F5C518;
+	--theme-accent-hover: #FFD640;
+	--theme-on-accent: #1E3A5F;
 
-	--theme-surface-1: hsl(0, 0%, 20%);
-	--theme-on-surface-1: hsl(0, 0%, 100%);
+	--theme-bg: #0F1A2E;
+	--theme-on-bg: #E8ECF1;
 
-	--theme-surface-2: #203422;
+	--theme-surface-1: #1A2A45;
+	--theme-on-surface-1: #E8ECF1;
+
+	--theme-surface-2: #2A4F7F;
 	--theme-on-surface-2: #ffffff;
 
-	--theme-shape-radius: 0;
+	--theme-shape-radius: clamp(0.75rem, 1.5rem, 2.5rem);
 
 	--form-field-input-color: var(--theme-on-bg);
 }

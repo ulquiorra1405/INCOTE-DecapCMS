@@ -1,38 +1,31 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Container, Button } from '@components/odyssey-theme';
-import settings from '../../../config/settings.js';
-import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Welcome to Odyssey</h1>
+				<h1>Prepárate e intégrate<br />al mundo laboral</h1>
 				<p>
-					A marketing website theme built with <a
-						href="https://astro.build"
-						target="_blank"
-						rel="noreferrer">Astro</a
-					> and carefully crafted for startups and businesses.
+					INCOTE te ofrece cursos técnicos certificados por INFOTEP en múltiples áreas. 
+					Formación práctica con horarios flexibles en Santo Domingo, Santiago y San Juan.
 				</p>
 				<div class="hero-btns__container">
-					<Button href="/theme/get-started" customIcon
-						>Get Started
+					<Button href="/cursos" customIcon>
+						Ver Cursos
             <Fragment slot="icon">
               <Icon name="ic:baseline-chevron-right"/>
             </Fragment>
-            </Button
-					>
-					<Button href="/theme/style-guide" unelevated>Style Guide</Button>
+          </Button>
+					<Button href="/nosotros" unelevated>Conócenos</Button>
 				</div>
-        {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
 		</div>
 		<div class="hero-section__image">
 				<picture>
 					<img
 						src="/assets/images/home/classic-hero.jpg"
-						alt="Astro Odyssey"
+						alt="INCOTE — Instituto Técnico Comercial"
 						id="home-hero-image"
 					/>
 				</picture>
@@ -51,7 +44,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 	}
 	.hero-section__text {
 		justify-self: center;
-		max-width: 25rem;
+		max-width: 28rem;
+	}
+	.hero-section__text h1 {
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		line-height: 1.15;
+		margin-bottom: 1.5rem;
 	}
 	.hero-btns__container {
 		display: flex;
