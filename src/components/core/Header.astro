@@ -81,7 +81,7 @@ const { navData, rightMenu } = Astro.props;
   .header-inner {
     width: 100%;
     max-width: var(--container-max-width);
-    padding: 1rem 2rem;
+    padding: 2rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,18 +129,25 @@ const { navData, rightMenu } = Astro.props;
   }
   nav ul li a {
     text-decoration: none;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     color: inherit;
     opacity: 0.72;
     transition: opacity linear 150ms;
+  }
+
+  .header-action-item__container {
+    margin-left: 2rem;
   }
   nav ul li a:hover {
     opacity: 1;
   }
 
-  @media(max-width: 600px) {
+  @media(max-width: 768px) {
     .header-inner {
       padding: 1rem;
+    }
+    .header-action-item__container {
+      margin-left: 0;
     }
     #menuButton {
       display: block;  
