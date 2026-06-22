@@ -8,6 +8,25 @@
   <title>Panel de Administración — INCOTE</title>
 </head>
 <body>
+  <!-- Incluir el widget de Netlify Identity ANTES que Decap CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // Inicializar el widget inmediatamente para atrapar tokens de invitación
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init();
+    }
+
+    // Cuando el usuario se autentica, cerrar el modal del widget (el CMS maneja el resto)
+    window.addEventListener('load', function() {
+      // Si llegamos con un hash (invite token), el widget ya lo detectó
+      // después de confirmar, recargamos para que Decap CMS tome control
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('login', function() {
+          document.location.reload();
+        });
+      }
+    });
+  </script>
   <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 </body>
 </html>
