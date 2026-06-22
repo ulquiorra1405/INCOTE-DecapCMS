@@ -4,8 +4,8 @@ backend:
   squash_merges: true
 
 # URL del sitio (cambiar cuando despliegues)
-site_url: https://incote.edu.do
-display_url: https://incote.edu.do
+site_url: https://incotedecapcms.netlify.app
+display_url: https://incotedecapcms.netlify.app
 logo_url: /favicon.png
 
 media_folder: "public/images/uploads"
