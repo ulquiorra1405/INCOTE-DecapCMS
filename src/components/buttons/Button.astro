@@ -3,12 +3,13 @@ const { href, unelevated, outlined, customIcon, onPrimary, newTab, size } =
   Astro.props;
 
 const Tag = href ? 'a' : 'button';
+const sizeClass = size === 'large' ? 'btn--large' : size === 'small' ? 'btn--small' : '';
 ---
 
 <Tag
   class={`btn ${unelevated && `btn--unelevated`} ${
     outlined && `btn--outlined`
-  } ${onPrimary && `btn--on-primary`} ${size === 'large' ? 'btn--large' : ''}`}
+  } ${onPrimary && `btn--on-primary`} ${sizeClass}`}
   href={href}
   target={`${newTab ? '_blank': ``}`}
   rel={`${newTab ? 'noopener noreferrer' : ``}`}
@@ -72,6 +73,11 @@ const Tag = href ? 'a' : 'button';
     font-size: 1rem;
   }
 
+  .btn--small {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .btn--unelevated {
     background: transparent;
     color: var(--theme-on-bg);
@@ -101,7 +107,7 @@ const Tag = href ? 'a' : 'button';
     color: var(--theme-on-accent);
   }
   .btn--on-primary:hover {
-    box-shadow: var(--theme-shadow-glow);
+    box-shadow: 0 0 20px rgba(245, 197, 24, 0.2);
   }
 
   .custom-icon__span {
@@ -115,8 +121,8 @@ const Tag = href ? 'a' : 'button';
   }
 
   .custom-icon__span :global(svg) {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   a.btn {

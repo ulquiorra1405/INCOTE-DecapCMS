@@ -1,12 +1,12 @@
 :root {
-	/* Theme Colors — INCOTE Brand */
-	--theme-primary: #1E3A5F;
-	--theme-primary-hover: #2A4F7F;
+	/* Theme Colors — INCOTE Brand (Verde) */
+	--theme-primary: #077B35;
+	--theme-primary-hover: #0A9E45;
 	--theme-on-primary: #fff;
 
 	--theme-accent: #F5C518;
 	--theme-accent-hover: #FFD640;
-	--theme-on-accent: #1E3A5F;
+	--theme-on-accent: #077B35;
 
 	--theme-bg: #ffffff;
 	--theme-on-bg: #1A1A2E;
@@ -14,25 +14,25 @@
 	--theme-surface-1: #F0F2F5;
 	--theme-on-surface-1: #1A1A2E;
 
-	--theme-surface-2: #E8F0FE;
-	--theme-on-surface-2: #1E3A5F;
+	--theme-surface-2: #E6F4EA;
+	--theme-on-surface-2: #077B35;
 
 	/* Gradients */
-	--theme-gradient-primary: linear-gradient(135deg, #1E3A5F 0%, #2A4F7F 50%, #3A6A9F 100%);
+	--theme-gradient-primary: linear-gradient(135deg, #077B35 0%, #0A9E45 50%, #12A84D 100%);
 	--theme-gradient-accent: linear-gradient(135deg, #F5C518 0%, #FFD640 50%, #FFE680 100%);
-	--theme-gradient-hero: linear-gradient(135deg, #0F1A2E 0%, #1E3A5F 40%, #2A4F7F 100%);
-	--theme-gradient-surface: linear-gradient(135deg, #F0F2F5 0%, #E8F0FE 100%);
+	--theme-gradient-hero: linear-gradient(135deg, #0D2412 0%, #077B35 40%, #0A9E45 100%);
+	--theme-gradient-surface: linear-gradient(135deg, #F0F2F5 0%, #E6F4EA 100%);
 
 	/* Shadows */
 	--theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
 	--theme-shadow-md: 0 4px 12px rgba(0,0,0,0.08);
 	--theme-shadow-lg: 0 8px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
 	--theme-shadow-xl: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
-	--theme-shadow-glow: 0 0 20px rgba(245, 197, 24, 0.15);
+	--theme-shadow-glow: 0 0 20px rgba(7, 123, 53, 0.15);
 
 	/* Theme Shapes */
 	--theme-shape-radius: clamp(0.75rem, 1.25rem, 2rem);
-	--theme-button-border-radius: 0.5rem;
+	--theme-button-border-radius: 1rem;
 
 	/* Theme Transition */
 	--theme-transition: 0.2s ease-in-out;
@@ -61,13 +61,13 @@
 
 [data-theme='default'] {
 	color-scheme: light;
-	--theme-primary: #1E3A5F;
-	--theme-primary-hover: #2A4F7F;
+	--theme-primary: #077B35;
+	--theme-primary-hover: #0A9E45;
 	--theme-on-primary: #fff;
 
 	--theme-accent: #F5C518;
 	--theme-accent-hover: #FFD640;
-	--theme-on-accent: #1E3A5F;
+	--theme-on-accent: #077B35;
 
 	--theme-bg: #ffffff;
 	--theme-on-bg: #1A1A2E;
@@ -75,17 +75,17 @@
 	--theme-surface-1: #F0F2F5;
 	--theme-on-surface-1: #1A1A2E;
 
-	--theme-surface-2: #E8F0FE;
-	--theme-on-surface-2: #1E3A5F;
+	--theme-surface-2: #E6F4EA;
+	--theme-on-surface-2: #077B35;
 
-	--theme-gradient-primary: linear-gradient(135deg, #1E3A5F 0%, #2A4F7F 50%, #3A6A9F 100%);
-	--theme-gradient-hero: linear-gradient(135deg, #0F1A2E 0%, #1E3A5F 40%, #2A4F7F 100%);
+	--theme-gradient-primary: linear-gradient(135deg, #077B35 0%, #0A9E45 50%, #12A84D 100%);
+	--theme-gradient-hero: linear-gradient(135deg, #0D2412 0%, #077B35 40%, #0A9E45 100%);
 
 	--theme-shadow-md: 0 4px 12px rgba(0,0,0,0.08);
 	--theme-shadow-lg: 0 8px 30px rgba(0,0,0,0.10);
 	--theme-shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
 	--theme-shape-radius: clamp(0.75rem, 1.25rem, 2rem);
-	--theme-button-border-radius: 0.5rem;
+	--theme-button-border-radius: 1rem;
 
 	--theme-transition: 0.2s ease-in-out;
 	--theme-transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,26 +102,27 @@
 	color-scheme: dark;
 	--theme-primary: #F5C518;
 	--theme-primary-hover: #FFD640;
-	--theme-on-primary: #1E3A5F;
+	--theme-on-primary: #077B35;
 
 	--theme-accent: #F5C518;
 	--theme-accent-hover: #FFD640;
-	--theme-on-accent: #1E3A5F;
+	--theme-on-accent: #077B35;
 
-	--theme-bg: #0A1128;
+	--theme-bg: #0D2412;
 	--theme-on-bg: #E8ECF1;
 
-	--theme-surface-1: #121F3D;
+	--theme-surface-1: #123D1D;
 	--theme-on-surface-1: #E8ECF1;
 
-	--theme-surface-2: #1A2A45;
+	--theme-surface-2: #077B35;
 	--theme-on-surface-2: #ffffff;
 
-	--theme-gradient-hero: linear-gradient(135deg, #060C1A 0%, #0A1128 40%, #121F3D 100%);
+	--theme-gradient-hero: linear-gradient(135deg, #060A08 0%, #0D2412 40%, #123D1D 100%);
 	--theme-shadow-lg: 0 8px 30px rgba(0,0,0,0.3);
 	--theme-shadow-xl: 0 20px 60px rgba(0,0,0,0.4);
 
 	--theme-shape-radius: clamp(0.75rem, 1.25rem, 2rem);
+	--theme-button-border-radius: 1rem;
 	--form-field-input-color: var(--theme-on-bg);
 }
 

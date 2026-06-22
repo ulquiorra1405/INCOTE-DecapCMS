@@ -19,7 +19,6 @@ const { navData, rightMenu } = Astro.props;
     
     if (navHeader.hasAttribute('mobile-menu-open', true)) {
       menuButton.title = "Open Main Menu"
-      // unlock scroll position
       bodyElement.style.removeProperty('overflow');
       bodyElement.style.removeProperty('position');
       bodyElement.style.removeProperty('top');
@@ -27,7 +26,6 @@ const { navData, rightMenu } = Astro.props;
       window.scrollTo(0, scrollPosition);
     } else {
       menuButton.title = "Close Main Menu"
-      // lock scroll position
       scrollPosition = window.pageYOffset;
       bodyElement.style.overflow = 'hidden';
       bodyElement.style.position = 'fixed';
@@ -40,49 +38,60 @@ const { navData, rightMenu } = Astro.props;
 </script>  
 
 <header id="odysseyNavHeader" class={`${rightMenu ? "header--right" : ``.trim()}`}>
-  <div class="header-logo-menu__container">
-  <button id="menuButton" title="Open Main Menu">
-    <span id="menuButtonIconHam">
-      <Icon name="ic:baseline-menu" width="24px" height="24px" />
-    </span>
-    <span id="menuButtonIconClose" hidden>
-      <Icon name="ic:baseline-close" width="24px" height="24px" />
-    </span>
-  </button>
-  <a class="header-logo__link" href="/">
-    <slot name="logo">
-    </slot>
-  </a>
-  </div>
-  <div class="header-nav__container">
-    <slot name="nav">
-      {navData && <nav>
-        <ul>
-          {navData.map(navItem => (
-            (<li><a href={navItem.slug} >{navItem.title}</a></li>)
-          ))}
-        </ul>
-      </nav>}
-    </slot>
-  </div>
-  <div class="header-action-item__container">
-    <slot name="action-item">
-    </slot>
+  <div class="header-inner">
+    <div class="header-logo-menu__container">
+      <button id="menuButton" title="Open Main Menu">
+        <span id="menuButtonIconHam">
+          <Icon name="ic:baseline-menu" width="24px" height="24px" />
+        </span>
+        <span id="menuButtonIconClose" hidden>
+          <Icon name="ic:baseline-close" width="24px" height="24px" />
+        </span>
+      </button>
+      <a class="header-logo__link" href="/">
+        <slot name="logo"></slot>
+      </a>
+    </div>
+    <div class="header-nav__container">
+      <slot name="nav">
+        {navData && <nav>
+          <ul>
+            {navData.map(navItem => (
+              (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+            ))}
+          </ul>
+        </nav>}
+      </slot>
+    </div>
+    <div class="header-action-item__container">
+      <slot name="action-item"></slot>
+    </div>
   </div>
 </header>
 
 <style>
   header {
     width: 100%;
-    padding: 1rem 0.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-inner {
+    width: 100%;
+    max-width: var(--container-max-width);
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  header.header--right {
+
+  header.header--right .header-inner {
     display: grid;
     grid-template-columns: 1fr auto auto;
   }
+
   .header-logo__link {
     width: fit-content;
     color: inherit;
@@ -110,7 +119,7 @@ const { navData, rightMenu } = Astro.props;
     vertical-align: middle;
   }
   nav {
-  display: flex;
+    display: flex;
   }
   nav ul {
     margin: 0;
@@ -128,7 +137,11 @@ const { navData, rightMenu } = Astro.props;
   nav ul li a:hover {
     opacity: 1;
   }
+
   @media(max-width: 600px) {
+    .header-inner {
+      padding: 1rem;
+    }
     #menuButton {
       display: block;  
       z-index: 100;
@@ -152,9 +165,9 @@ const { navData, rightMenu } = Astro.props;
       align-items: center;
       flex-direction: column;
     }
-     header[mobile-menu-open] nav ul li {
-       font-size: var(--font-size-lg);
-       margin-bottom: 1rem;
-     }
+    header[mobile-menu-open] nav ul li {
+      font-size: var(--font-size-lg);
+      margin-bottom: 1rem;
+    }
   }
 </style>
