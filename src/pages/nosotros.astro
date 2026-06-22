@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Page.astro';
+import { Container, Button } from '@components/odyssey-theme';
+
+const seo = {
+	title: 'Nosotros — INCOTE',
+	description: 'El Instituto Técnico Comercial (INCOTÉ) se fundó en 1984 en San Juan de la Maguana. Conoce nuestra historia.',
+};
+---
+
+<Layout {seo}>
+	<Container>
+		<section class="about-hero">
+			<h1>Sobre Nosotros</h1>
+			<div class="about-content">
+				<div class="about-text">
+					<h2>Nuestra Historia</h2>
+					<p>El Instituto Técnico Comercial (INCOTÉ) se fundó en 1984 en San Juan de la Maguana, con el objetivo de brindar formación técnica y moral basada en la ética y la responsabilidad.</p>
+					<p>Desde su primera graduación en 1986, ha crecido significativamente, ofreciendo nuevas carreras técnicas, incluyendo informática en 1992, e integrando tecnologías educativas desde 1999.</p>
+					<p>Reconocido por <strong>INFOTEP</strong> en 1996 como Centro Colaborador, INCOTÉ ha expandido su presencia a <strong>Santo Domingo (2004)</strong> y <strong>Santiago (2012)</strong>. Ha formado a más de <strong>100,000 profesionales</strong>, recibiendo múltiples premios a la excelencia educativa.</p>
+				</div>
+			</div>
+		</section>
+	</Container>
+
+	<!-- Stats -->
+	<Container>
+		<section class="about-stats">
+			<div class="stat-card">
+				<span class="stat-number">+500</span>
+				<span class="stat-label">Estudiantes activos</span>
+			</div>
+			<div class="stat-card">
+				<span class="stat-number">+20</span>
+				<span class="stat-label">Cursos y capacitaciones</span>
+			</div>
+			<div class="stat-card">
+				<span class="stat-number">+50</span>
+				<span class="stat-label">Horas de enseñanza</span>
+				<span class="stat-sub">mil</span>
+			</div>
+			<div class="stat-card">
+				<span class="stat-number">+40</span>
+				<span class="stat-label">Años de servicio</span>
+			</div>
+		</section>
+	</Container>
+
+	<!-- Instructors -->
+	<Container>
+		<section class="instructors-section">
+			<h2>Conoce a nuestros capacitadores</h2>
+			<div class="instructors-grid">
+				<div class="instructor-card">
+					<div class="instructor-avatar" style="background: var(--theme-primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">TL</div>
+					<h3>Tadaichi Lopez</h3>
+					<span class="instructor-area">Inglés</span>
+				</div>
+				<div class="instructor-card">
+					<div class="instructor-avatar" style="background: var(--theme-accent); display: flex; align-items: center; justify-content: center; color: var(--theme-on-accent); font-size: 1.5rem; font-weight: 700;">JM</div>
+					<h3>Jennelly Martínez</h3>
+					<span class="instructor-area">Farmacia y Visitador a Médico</span>
+				</div>
+				<div class="instructor-card">
+					<div class="instructor-avatar" style="background: var(--theme-primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">SH</div>
+					<h3>Sulem Hilario</h3>
+					<span class="instructor-area">Secretariado</span>
+				</div>
+				<div class="instructor-card">
+					<div class="instructor-avatar" style="background: var(--theme-accent); display: flex; align-items: center; justify-content: center; color: var(--theme-on-accent); font-size: 1.5rem; font-weight: 700;">CV</div>
+					<h3>Carmen Vega</h3>
+					<span class="instructor-area">Ventas y Emprendedurismo</span>
+				</div>
+			</div>
+		</section>
+	</Container>
+
+	<!-- CTA -->
+	<Container>
+		<section class="about-cta">
+			<h2>¿Listo para formar parte de INCOTE?</h2>
+			<p>Contamos con cursos en muchas áreas y en distintos horarios. ¡Inscríbete hoy!</p>
+			<Button href="/cursos">Ver Nuestros Cursos</Button>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.about-hero {
+		margin: var(--section-margin) auto;
+	}
+	.about-hero h1 {
+		margin-bottom: 2rem;
+	}
+	.about-content {
+		max-width: 800px;
+	}
+	.about-text h2 {
+		margin-bottom: 1rem;
+	}
+	.about-text p {
+		font-size: 1.05rem;
+		line-height: 1.8;
+		margin-bottom: 1rem;
+		opacity: 0.85;
+	}
+
+	/* Stats */
+	.about-stats {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+		margin: var(--section-margin) auto;
+		text-align: center;
+	}
+	.stat-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem 1rem;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+	}
+	.stat-number {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--theme-primary);
+		font-family: var(--theme-font-family-serif);
+	}
+	.stat-label {
+		font-size: 0.9rem;
+		opacity: 0.8;
+	}
+	.stat-sub {
+		font-size: 0.75rem;
+		opacity: 0.6;
+	}
+
+	/* Instructors */
+	.instructors-section {
+		margin: var(--section-margin) auto;
+		text-align: center;
+	}
+	.instructors-section h2 {
+		margin-bottom: 2rem;
+	}
+	.instructors-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+	}
+	.instructor-card {
+		padding: 1.5rem;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		text-align: center;
+	}
+	.instructor-avatar {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		margin: 0 auto 1rem;
+		border: 3px solid var(--theme-accent);
+	}
+	.instructor-card h3 {
+		font-size: 1rem;
+		margin-bottom: 0.25rem;
+	}
+	.instructor-area {
+		font-size: 0.85rem;
+		opacity: 0.7;
+	}
+
+	/* CTA */
+	.about-cta {
+		margin: var(--section-margin) auto;
+		padding: 4rem 2rem;
+		background: var(--theme-primary);
+		color: var(--theme-on-primary);
+		border-radius: var(--theme-shape-radius);
+		text-align: center;
+	}
+	.about-cta h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	.about-cta p {
+		max-width: 500px;
+		margin: 0 auto 2rem;
+		opacity: 0.85;
+	}
+
+	@media (max-width: 768px) {
+		.about-stats { grid-template-columns: repeat(2, 1fr); }
+		.instructors-grid { grid-template-columns: repeat(2, 1fr); }
+	}
+	@media (max-width: 480px) {
+		.about-stats { grid-template-columns: 1fr; }
+		.instructors-grid { grid-template-columns: 1fr; }
+	}
+</style>

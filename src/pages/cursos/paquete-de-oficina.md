@@ -7,7 +7,7 @@ descripcion_corta: "Domina Word, Excel, PowerPoint y Outlook. Desde lo básico h
 horario: "Sábados, 9:00 a.m. - 12:00 p.m."
 duracion: "3 meses (50 horas)"
 modalidad: "Presencial"
-imagen: "/assets/images/home/screenshots/blog-post"
+imagen: "/assets/images/placeholder-screenshot.png"
 instructor: "Prof. Sammy James"
 estudiantes: "+60 estudiantes"
 precio_inscripcion: "RD$3,500"

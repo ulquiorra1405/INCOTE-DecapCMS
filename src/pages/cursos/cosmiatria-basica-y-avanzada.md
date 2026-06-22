@@ -4,12 +4,12 @@ titulo: "Cosmiatría Básica y Avanzada"
 slug: "cosmiatria-basica-y-avanzada"
 categoria: "Estética"
 descripcion_corta: "Limpieza facial, tratamientos estéticos avanzados. Aprende las técnicas más demandadas del mercado."
-horario: "Domingos, 8:00 a.m. - 12:00 p.m."
+horario: "Domingos, 8:00 a.m. – 12:00 p.m."
 duracion: "3 meses (50 horas)"
 modalidad: "Presencial"
-imagen: "/assets/images/home/screenshots/landing-1"
+imagen: "/assets/images/placeholder-screenshot.png"
 instructor: ""
-estudiantes: "+40 estudiantes"
+estudiantes: ""
 precio_inscripcion: "RD$6,500"
 precio_mensualidad: "RD$6,000"
 ---
@@ -21,6 +21,8 @@ precio_mensualidad: "RD$6,000"
 - Cuidado de la piel
 - Maquillaje profesional
 
-## Metodología
+## Modalidad
 
-Clases presenciales con práctica supervisada. Equipos y productos profesionales incluidos.
+Presencial.
+
+**Inversión total:** RD$18,500.
